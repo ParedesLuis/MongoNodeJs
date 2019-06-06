@@ -1,0 +1,37 @@
+<div class="display-4 text-center">
+    Ingresa tu comentario sobre la pagina
+</div>
+
+<div class="box-coment">
+    <h3 class="text-center">Numero de comentarios {{number}}</h3>
+    {{#each comentarios as |coment key|}}
+    
+   <div class="row">
+       
+       <div  class="col-10">
+            <div class="alert alert-warning" role="alert">
+            {{coment.comentario}}
+            </div>
+       </div>
+       <div class="col-2">
+           
+           <a href="/delete/{{coment.id}}"><button type="button" class="btn btn-dark">Eliminar</button></a>
+       </div>
+       
+   </div>
+    
+    {{/each}}
+</div>
+    
+
+
+<form class="box-coment" method="POST" action="/created">
+    <div class="display-5 Marg">
+        Comentarios
+    </div>
+    <div class="box-text">
+        <textarea name="comentario" class="form-control" id="Textarea" rows="3" placeholder="Ingrese un comentario..."></textarea>
+    </div>
+        <button type="submit" class="btn btn-warning btn-lg Marg">Comentar</button>
+</form>
+
